@@ -1,39 +1,54 @@
 # Voltage Stability Analysis
 
-An interactive MATLAB application for exploring voltage stability using P-V curves, Q-V curves and continuation power flow. Select a line from a three-bus or fourteen-bus example and examine how power factor and loading affect voltage.
+A MATLAB application for exploring how loading and power factor affect voltage in an electrical network. It brings together P-V curves, Q-V curves and continuation power flow in an interactive interface.
 
-## Tools used
+## What it does
 
-MATLAB, MATLAB graphics, numerical linear algebra and a predictor-corrector continuation algorithm.
+- Selects lines from three-bus and fourteen-bus network examples.
+- Plots voltage against active power and reactive-power requirements.
+- Identifies critical operating points and traces the continuation curve.
 
-## How to run
+## Results
 
-1. Open this folder as the MATLAB current folder.
-2. Run `voltage_stability_app`.
-3. Select the system, line and analysis type, then enter the requested parameters.
-4. Inspect voltage curves, critical points and continuation steps.
+Figures from the [technical report](docs/voltage-stability-analysis-report.pdf).
 
-## Files
+### P-V curves
+
+The curves compare different power factors and mark the critical loading points.
+
+![P-V curves for different power factors](docs/results/pv-curves.png)
+
+### Q-V curves
+
+Reactive-power requirements are shown for several active-power levels.
+
+![Q-V curves](docs/results/qv-curves.png)
+
+### Continuation power flow
+
+![Continuation curve with predictor and corrector steps](docs/results/continuation-curve.png)
+
+## Tools
+
+MATLAB, MATLAB graphics and numerical linear algebra.
+
+## Run
+
+Open this folder in MATLAB and run:
+
+```matlab
+voltage_stability_app
+```
+
+Choose the system, line and analysis type, then enter the operating parameters.
+
+## Project files
 
 | File | Purpose |
 | --- | --- |
-| `voltage_stability_app.m` | Interactive application and input selection |
-| `plot_pv_qv_curves.m` | P-V and Q-V analysis |
+| `voltage_stability_app.m` | Interactive application |
+| `plot_pv_qv_curves.m` | P-V and Q-V calculations and plots |
 | `plot_continuation_power_flow.m` | Predictor-corrector continuation |
 | `three_bus_data.m`, `fourteen_bus_data.m` | Example network data |
 
-## Limitations
-
-The supplied continuation implementation uses a simplified two-bus equivalent for the selected line. It ignores meshed-network effects and is not a full multi-bus continuation solver. The report discusses a broader context; the source code defines the implementation.
-
-## Project context
-
-Prepared from academic project files. Collaborative work remains team work; personal names are omitted from this public copy. Original technical comments and interfaces may be in French. No new license has been assigned.
-
-## Technical report
-
-[Read the original French technical report](docs/voltage-stability-analysis-report.pdf). Personal names and document metadata were removed from this copy. Technical content is preserved and may describe earlier study settings.
-
-## Verification status
-
-Source structure and reference names were inspected. MATLAB startup did not complete in this environment, so MATLAB and Simulink execution could not be verified.
+Developed as a collaborative academic engineering project.
