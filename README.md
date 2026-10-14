@@ -1,8 +1,8 @@
 # Voltage Stability Analysis
 
-A MATLAB application for exploring how loading and power factor affect voltage in an electrical network. It brings together P-V curves, Q-V curves and continuation power flow in an interactive interface.
+I developed a MATLAB application to study voltage stability using P–V curves, Q–V curves and continuation power flow, and to compare the effects of loading and power factor.
 
-## What it does
+## Main features
 
 - Selects lines from three-bus and fourteen-bus network examples.
 - Plots voltage against active power and reactive-power requirements.
@@ -51,4 +51,4 @@ Choose the system, line and analysis type, then enter the operating parameters.
 | `plot_continuation_power_flow.m` | Predictor-corrector continuation |
 | `three_bus_data.m`, `fourteen_bus_data.m` | Example network data |
 
-Developed as a collaborative academic engineering project.
+Academic group project at the National Polytechnic School of Algiers.
